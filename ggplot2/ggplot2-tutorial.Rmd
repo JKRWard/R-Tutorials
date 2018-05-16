@@ -268,24 +268,26 @@ g + theme(plot.title = element_text(size = 15, face = 4, hjust = 1))
 
 Note that you can also use different fonts. To use fonts which are installed on your machine (and you may be using in your office program) we get help from a package called `extrafont`. After we loaded the package, you need to import and load the fonts ofinstalled on your device:
 
-```{r extrafont package, cache = F, message = F}
-library(extrafont)
-font_import()
-loadfonts(device = "win")
-```
+N.B. This doesn't seem to work on mac
+
+<!-- ```{r extrafont package, cache = F, message = F} -->
+<!-- library(extrafont) -->
+<!-- #font_import() #this takes ages, better to do it not in the markdown doc at least for the first time  -->
+<!-- loadfonts() -->
+<!-- ``` -->
 
 You can have a look on your imported font libary, by typing `fonts()` or `fonttable()`.
 
 Now, we can use one of those font families:
 
 ```{r title style}
-g + theme(plot.title = element_text(size = 18, family = "Merriweather"))
+#g + theme(plot.title = element_text(size = 18, family = "Tahoma"))
 ```
 
 (You can also set a non-default font for all text elements of your plots, for more details see section "Working with Themes". I am going to use *Roboto Condensed* as new default font for the following plots.)
 
 ```{r default font}
-theme_set(theme_gray(base_size = 12, base_family = "Roboto Condensed"))
+#theme_set(theme_gray(base_size = 12, base_family = "Roboto Condensed"))
 ```
 
 
@@ -1296,7 +1298,7 @@ There is a nice shiny app showing the potential inputs for different geoms. You 
 
 The grid-based graphics functions in lattice and ggplot2 create a graph object. When you use these functions interactively at the command line, the result is automatically printed, but in `source()` or inside your own functions you will need an explicit `print()` statement, i.e. `print(g)` in most of our examples. See also the [Q&A page of R](https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-do-lattice_002ftrellis-graphics-not-work_003f).
 
-## Additiobal Sources
+## Additional Sources
 
 * ["Fundamentals of Data Visualization"](http://serialmentor.com/dataviz/), an online book by Claus Wilke about data visualization in generell but using `ggplot2`
 * ["Cookbook for R"](http://www.cookbook-r.com/Graphs/), an online and printed book by Winston Chang with reciped to quickly produce the desired plot.
